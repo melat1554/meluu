@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      text-align: center;
+      position: relative;
+      background: url('490993631_1251084636581778_2670926416201727094_n.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 2rem;
+      color: pink;
+      animation: floatHeart 10s infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(20px);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      margin-top: 15vh;
+      padding: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background: pink;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff69b4;
+    }
+
+    .letter {
+      display: none;
+      margin: 40px auto;
+      max-width: 800px;
+      background: rgba(255, 182, 193, 0.2);
+      padding: 20px;
+      border-radius: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 1s;
+      height: 70vh;
+      overflow-y: scroll;
+      text-align: left;
+      font-size: 1.2rem;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    iframe {
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating hearts -->
+<script>
+  for (let i = 0; i < 20; i++) {
+    let heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+    heart.style.fontSize = (1 + Math.random() * 2) + 'rem';
+    document.body.appendChild(heart);
+  }
+</script>
+
+<!-- Main container -->
+<div class="container">
+  <button id="revealButton" onclick="revealLetter()">Press to Reveal 💌</button>
+
+  <!-- Music player (only at the start) -->
+  <div id="musicPlayer">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0YAGCZjsDqw6yud2PTMuvu?utm_source=generator&autoplay=1&t=7" width="80%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+
+  <!-- Love letter (hidden initially) -->
+  <div id="letter" class="letter">
+    <p>
+      Happy Birthday my love ❤️
+      <br><br>
+      You’re finally 20 now  and I just want to remind you of something so important:
+      <br><br>
+      Since the day we met, I’ve felt something different — something so real and pure, something I had never felt before. 
+      You came into my life and changed it in the most beautiful way.
+      <br><br>
+      You're not just my boyfriend — you're my best friend, my safe place, my biggest blessing. 
+      You made a soft spot in my heart that no one else could ever touch.
+      <br><br>
+      One day, I can’t wait to tell our kids about you. 
+      I’ll tell them that before they even existed, their mom and dad had something so special, so full of love, that it was impossible not to create a little family out of it someday. 
+      (And maybe I’ll leave out how crazy in love I was... or maybe I'll tell them everything 😉)
+      <br><br>
+      I love you more than words could ever explain.  
+      Thank you for being the person I can laugh with, dream with, and build a future with. 
+      You are so special to me — you always have been, and you always will be.
+      <br><br>
+      I loveeeeeeeee youuuuuuuuuuu 
+      <br><br>
+      Happy birthday again, my love 💖  
+      I’m so grateful for you, for us, and for everything that's still ahead.  
+      <strong>This is just the beginning of everything beautiful waiting for us. ✨</strong>
+    </p>
+  </div>
+</div>
+
+<script>
+  function revealLetter() {
+    var letter = document.getElementById('letter');
+    var musicPlayer = document.getElementById('musicPlayer');
+    var button = document.getElementById('revealButton');
+
+    letter.style.display = 'block';
+    musicPlayer.style.display = 'none';
+    button.style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
